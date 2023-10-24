@@ -56,8 +56,10 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   var loadedEntries = JSON.parse(localStorage.getItem("entries"));
-  for (var i=0;i<timeBlocks.length;i++) {
-    timeBlocks[i].children[1].value = loadedEntries[i].task;
+  if (loadedEntries !== null) {
+    for (var i=0;i<timeBlocks.length;i++) {
+      timeBlocks[i].children[1].value = loadedEntries[i].task;
+    }
   }
 
   // TODO: Add code to display the current date in the header of the page.
